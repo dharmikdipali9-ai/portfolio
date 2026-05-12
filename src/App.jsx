@@ -47,7 +47,7 @@ const projects = [
     description:
       "Blogging platform with authentication, role-based access control, CRUD publishing, comments, likes, reports, and admin moderation.",
     stack: ["Flask", "MySQL", "SQLite", "JavaScript"],
-    demo: "https://inkspire-blog-platform-2-sfh3.onrender.com/",
+    demo: "https://inkspire-blog-platform-bkhr.onrender.com/",
     github: "https://github.com/dharmikdipali9-ai",
     image: "./assets/projects/inkspire-home.png",
   },
