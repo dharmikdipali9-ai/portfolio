@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dipali Dharmik favicon">
+  <defs>
+    <linearGradient id="mark" x1="12" y1="10" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#8bffca"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#060914"/>
+  <path d="M18 50V14h13c10.7 0 18 7.1 18 18s-7.3 18-18 18H18Zm8-7h4.7c6.4 0 10.2-4.1 10.2-11S37.1 21 30.7 21H26v22Z" fill="url(#mark)" filter="url(#glow)"/>
+  <path d="M12 50V14h12.4c10.7 0 18 7.1 18 18s-7.3 18-18 18H12Zm8-7h4.1c6.4 0 10.2-4.1 10.2-11S30.5 21 24.1 21H20v22Z" fill="#edf4ff"/>
+</svg>
