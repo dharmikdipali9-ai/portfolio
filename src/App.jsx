@@ -2,6 +2,53 @@ import { useEffect, useMemo, useState } from "react";
 
 const navItems = ["Home", "About", "Experience", "Skills", "Projects", "Contact"];
 
+const contactInfo = {
+  name: "Dipali",
+  fullName: "Dipali Dharmik",
+  role: "Full Stack Python Developer",
+  profileImages: [
+    "/dipali-img.jpg",
+    "/dipali-img.png",
+    "/dipali-img.jpeg",
+    "/assets/dipali-img.jpg",
+    "/assets/dipali-img.png",
+    "/assets/dipali-img.jpeg",
+    "/assets/profile.jpg",
+    "/assets/profile.png",
+    "/assets/profile.jpeg",
+  ],
+  email: "dharmikdipali9@gmail.com",
+  phone: "+919356745404",
+  github: "https://github.com/dharmikdipali9-ai",
+  linkedin: "https://linkedin.com/in/dipalidharmik",
+  company: "Kavya Infoweb Pvt. Ltd.",
+};
+
+const footerLinks = ["Home", "About", "Projects", "Skills", "Contact"];
+
+const socialLinks = [
+  {
+    label: "GitHub",
+    href: contactInfo.github,
+    icon: "github",
+  },
+  {
+    label: "LinkedIn",
+    href: contactInfo.linkedin,
+    icon: "linkedin",
+  },
+  {
+    label: "Email",
+    href: `mailto:${contactInfo.email}`,
+    icon: "mail",
+  },
+  {
+    label: "Call",
+    href: `tel:${contactInfo.phone}`,
+    icon: "phone",
+  },
+];
+
 const skills = [
   ["Python", 92],
   ["React", 88],
@@ -46,7 +93,7 @@ const projects = [
     title: "Inkspire Blog Platform",
     description:
       "Blogging platform with authentication, role-based access control, CRUD publishing, comments, likes, reports, and admin moderation.",
-    stack: ["Flask", "MySQL", "SQLite", "JavaScript"],
+    stack: ["Flask", "PostgresSQL", "Neon", "JavaScript"],
     demo: "https://inkspire-blog-platform-bkhr.onrender.com/",
     github: "https://github.com/dharmikdipali9-ai",
     image: "./assets/projects/inkspire-home.png",
@@ -77,6 +124,97 @@ const phrases = [
   "responsive React UIs",
   "database-backed products",
 ];
+
+function SocialIcon({ name }) {
+  const commonProps = {
+    width: 20,
+    height: 20,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    "aria-hidden": "true",
+  };
+
+  if (name === "github") {
+    return (
+      <svg {...commonProps}>
+        <path
+          d="M12 2.75a9.25 9.25 0 0 0-2.92 18.03c.46.08.63-.2.63-.44v-1.58c-2.56.56-3.1-1.1-3.1-1.1-.42-1.08-1.03-1.37-1.03-1.37-.84-.58.06-.57.06-.57.93.07 1.42.96 1.42.96.83 1.41 2.17 1 2.7.77.08-.6.32-1 .59-1.23-2.04-.23-4.19-1.02-4.19-4.55 0-1 .36-1.83.95-2.47-.1-.23-.41-1.17.09-2.44 0 0 .78-.25 2.54.94a8.78 8.78 0 0 1 4.62 0c1.76-1.19 2.53-.94 2.53-.94.51 1.27.19 2.21.1 2.44.59.64.94 1.46.94 2.47 0 3.54-2.15 4.32-4.2 4.55.33.28.63.85.63 1.71v2.39c0 .24.16.53.64.44A9.25 9.25 0 0 0 12 2.75Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
+  }
+
+  if (name === "linkedin") {
+    return (
+      <svg {...commonProps}>
+        <path
+          d="M6.71 19H3.66V9.16h3.05V19ZM5.18 7.82a1.77 1.77 0 1 1 0-3.54 1.77 1.77 0 0 1 0 3.54ZM20.35 19h-3.04v-4.79c0-1.14-.02-2.61-1.59-2.61-1.6 0-1.84 1.25-1.84 2.53V19h-3.04V9.16h2.92v1.34h.04c.41-.77 1.4-1.59 2.88-1.59 3.08 0 3.65 2.03 3.65 4.67V19h.02Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
+  }
+
+  if (name === "phone") {
+    return (
+      <svg {...commonProps}>
+        <path
+          d="M7.1 4.25 8.9 3.8c.84-.21 1.71.22 2.05 1.01l.89 2.08c.3.71.1 1.53-.48 2.03l-1.13.97a11.05 11.05 0 0 0 3.88 3.88l.97-1.13c.5-.58 1.32-.78 2.03-.48l2.08.89c.79.34 1.22 1.21 1.01 2.05l-.45 1.8A2.75 2.75 0 0 1 17.08 19C10.41 19 5 13.59 5 6.92c0-1.26.86-2.36 2.1-2.67Z"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg {...commonProps}>
+      <path
+        d="M4.75 6.75h14.5v10.5H4.75V6.75Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path
+        d="m5.25 7.25 6.75 5 6.75-5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ProfileImage({ className = "", fallback = "DD" }) {
+  const [imageIndex, setImageIndex] = useState(0);
+  const imageSrc = contactInfo.profileImages[imageIndex];
+
+  function handleImageError() {
+    setImageIndex((current) => current + 1);
+  }
+
+  return (
+    <div
+      className={`${className} ${imageSrc ? "has-image" : ""}`.trim()}
+      aria-label={`${contactInfo.fullName} profile`}
+    >
+      {imageSrc ? (
+        <img
+          src={imageSrc}
+          alt={contactInfo.fullName}
+          onError={handleImageError}
+        />
+      ) : (
+        fallback
+      )}
+    </div>
+  );
+}
 
 function useTyping(words) {
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -246,6 +384,7 @@ function Hero() {
 
         <div className="hero-visual reveal">
           <div className="profile-orbit">
+            <ProfileImage className="profile-photo" fallback="Dipali" />
             <div className="profile-card">
               <div className="avatar" aria-label="Dipali Dharmik initials">
                 DD
@@ -487,6 +626,10 @@ function Contact() {
             <input type="email" name="email" placeholder="you@example.com" required />
           </label>
           <label>
+            Phone
+            <input type="number" name="number" placeholder="+912345678912" required />
+          </label>
+          <label>
             Message
             <textarea name="message" rows="5" placeholder="Tell me about your project" required></textarea>
           </label>
@@ -504,10 +647,90 @@ function Contact() {
 
 function Footer() {
   const year = useMemo(() => new Date().getFullYear(), []);
+  const [footerEmail, setFooterEmail] = useState("");
+
+  function handleFooterSubmit(event) {
+    event.preventDefault();
+    const email = footerEmail.trim();
+    const subject = encodeURIComponent("Portfolio connection request");
+    const body = encodeURIComponent(
+      email
+        ? `Hi ${contactInfo.fullName},\n\nI would like to connect with you.\n\nMy email: ${email}`
+        : `Hi ${contactInfo.fullName},\n\nI would like to connect with you.`
+    );
+
+    window.location.href = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
+    setFooterEmail("");
+  }
 
   return (
     <footer className="site-footer">
-      <p>&copy; {year} Dipali Dharmik. Built with care.</p>
+      <div className="container footer-grid">
+        <div className="footer-brand">
+          <a href="#home" className="footer-logo">
+            {contactInfo.name}<span>.</span>
+          </a>
+          <p>
+            {contactInfo.role} specializing in modern responsive web applications,
+            REST APIs, and interactive interfaces focused on performance and user
+            experience.
+          </p>
+        </div>
+
+        <div className="footer-column">
+          <h2>Quick Links</h2>
+          <ul className="footer-links">
+            {footerLinks.map((item) => (
+              <li key={item}>
+                <a href={`#${item.toLowerCase()}`}>{item}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="footer-column footer-connect">
+          <h2>Stay Connected</h2>
+          <p>Send your email and I will connect with you personally.</p>
+          <form className="footer-form" onSubmit={handleFooterSubmit}>
+            <label className="sr-only" htmlFor="footer-email">
+              Email address
+            </label>
+            <input
+              id="footer-email"
+              type="email"
+              value={footerEmail}
+              onChange={(event) => setFooterEmail(event.target.value)}
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <div className="footer-column">
+          <h2>Follow Me</h2>
+          <div className="footer-socials">
+            {socialLinks.map((link) => (
+              <a
+                href={link.href}
+                key={link.label}
+                aria-label={link.label}
+                title={link.label}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+              >
+                <SocialIcon name={link.icon} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>
+          Copyright &copy; {year} <span>All Rights Reserved</span> | Designed & Developed
+          by <span>{contactInfo.fullName}</span>
+        </p>
+      </div>
     </footer>
   );
 }
