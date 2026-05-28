@@ -115,16 +115,7 @@ const projects = [
     demo: "#home",
     github: "https://github.com/dharmikdipali9-ai",
     image: "./assets/projects/portfolio-preview.svg",
-  },
-  {
-    title: "API Authentication System",
-    description:
-      "Backend-ready authentication concept with JWT flows, protected endpoints, validation patterns, and clean API integration structure.",
-    stack: ["Flask", "JWT", "REST APIs"],
-    demo: "#contact",
-    github: "https://github.com/dharmikdipali9-ai",
-    image: "./assets/projects/api-preview.svg",
-  },
+  }
 ];
 
 const phrases = [
