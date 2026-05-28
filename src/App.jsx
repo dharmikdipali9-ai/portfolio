@@ -85,9 +85,9 @@ const projects = [
     description:
       "An AI-powered full-stack Resume Analyzer platform built using React, Django REST Framework, PostgreSQL, and AI-based resume processing tools.",
     stack: ["React", "Django REST", "PostgreSQL", "AI Tools"],
-    demo: "#projects",
+    demo: "https://ai-resume-analyzer-mu-coral.vercel.app/",
     github: "https://github.com/dharmikdipali9-ai/ai-resume-analyzer",
-    image: "./assets/projects/resume-analyzer-dashboard.svg",
+    image: "/assets/projects/resume-analyzer-dashboard.png",
   },
   {
     title: "AI Based Personal Finance",
@@ -95,8 +95,8 @@ const projects = [
       "Full-stack finance dashboard to manage income, expenses, budgets, JWT authentication, email OTP verification, and smart insights.",
     stack: ["React", "Flask", "MySQL", "Cloudinary"],
     demo: "https://ai-finance-manager-nu.vercel.app/",
-    github: "https://github.com/dharmikdipali9-ai",
-    image: "./assets/projects/ai-finance-dashboard.png",
+    github: "https://github.com/dharmikdipali9-ai/ai-finance-manager",
+    image: "/assets/projects/ai-finance-dashboard.png",
   },
   {
     title: "Inkspire Blog Platform",
@@ -104,17 +104,17 @@ const projects = [
       "Blogging platform with authentication, role-based access control, CRUD publishing, comments, likes, reports, and admin moderation.",
     stack: ["Flask", "PostgresSQL", "Neon", "JavaScript"],
     demo: "https://inkspire-blog-platform-bkhr.onrender.com/",
-    github: "https://github.com/dharmikdipali9-ai",
-    image: "./assets/projects/inkspire-home.png",
+    github: "https://github.com/dharmikdipali9-ai/Inkspire-blog-platform",
+    image: "/assets/projects/inkspire-home.png",
   },
   {
     title: "Developer Portfolio",
     description:
       "Responsive dark-theme portfolio with smooth navigation, animated sections, contact flow, and resume download support.",
     stack: ["React", "CSS", "JavaScript"],
-    demo: "#home",
-    github: "https://github.com/dharmikdipali9-ai",
-    image: "./assets/projects/portfolio-preview.svg",
+    demo: "https://portfolio-dipali-dharmik.vercel.app/",
+    github: "https://github.com/dharmikdipali9-ai/portfolio",
+    image: "/assets/projects/portfolio-preview.png",
   }
 ];
 
