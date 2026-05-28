@@ -81,6 +81,15 @@ const experiences = [
 
 const projects = [
   {
+    title: "AI Resume Analyzer",
+    description:
+      "An AI-powered full-stack Resume Analyzer platform built using React, Django REST Framework, PostgreSQL, and AI-based resume processing tools.",
+    stack: ["React", "Django REST", "PostgreSQL", "AI Tools"],
+    demo: "#projects",
+    github: "https://github.com/dharmikdipali9-ai/ai-resume-analyzer",
+    image: "./assets/projects/resume-analyzer-dashboard.svg",
+  },
+  {
     title: "AI Based Personal Finance",
     description:
       "Full-stack finance dashboard to manage income, expenses, budgets, JWT authentication, email OTP verification, and smart insights.",
@@ -411,13 +420,13 @@ function About() {
         <div className="section-heading reveal">
           <p className="eyebrow">About</p>
           <h2>Developer with a practical, product-minded approach.</h2>
-        </div>
-        <div className="about-content reveal">
-          <p>
+          <p className="section-note">
             I am a Full Stack Python Developer with hands-on experience building
             scalable, production-ready web applications using React.js, Flask, Django,
             REST APIs, authentication systems, and SQL databases.
           </p>
+        </div>
+        <div className="about-content reveal">
           <div className="timeline">
             <article>
               <span>Focus</span>
@@ -615,6 +624,14 @@ function Contact() {
             </a>
             <a href="mailto:dharmikdipali9@gmail.com">Email</a>
           </div>
+          <div className="contact-map" aria-label="Map of Surat city">
+            <iframe
+              title="Surat city map"
+              src="https://www.google.com/maps?q=Surat%2C%20Gujarat&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
         <form className="contact-form reveal" onSubmit={handleSubmit}>
           <label>
@@ -728,7 +745,10 @@ function Footer() {
       <div className="footer-bottom">
         <p>
           Copyright &copy; {year} <span>All Rights Reserved</span> | Designed & Developed
-          by <span>{contactInfo.fullName}</span>
+          by{" "}
+          <a href="https://www.linkedin.com/in/dipalidharmik/" target="_blank" rel="noreferrer">
+            {contactInfo.fullName}
+          </a>
         </p>
       </div>
     </footer>
