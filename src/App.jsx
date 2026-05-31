@@ -374,8 +374,8 @@ function Hero() {
             </a>
             <a
               className="btn resume"
-              href="./assets/dipali_dharmik_full_stack_python_developer_resume.pdf"
-              download
+              href="/dipali_dharmik_full_stack_python_developer_resume.pdf"
+              download="dipali_dharmik_full_stack_python_developer_resume.pdf"
             >
               Download Resume
             </a>
