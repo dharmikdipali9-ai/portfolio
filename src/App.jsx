@@ -60,6 +60,8 @@ const skills = [
   ["PostgreSQL", 76],
   ["REST APIs", 87],
   ["Tailwind CSS", 80],
+  ["PHP", 70],
+  ["Docker", 80],
 ];
 
 const experiences = [
@@ -67,7 +69,7 @@ const experiences = [
     role: "Associate Software Developer",
     company: "Kavya Infoweb Pvt. Ltd",
     location: "Nagpur",
-    period: "Nov 2025 - Present",
+    period: "June 2025 - Present",
     summary:
       "Building scalable web applications with React.js and Flask while contributing to real product features in Agile workflows.",
     highlights: [
